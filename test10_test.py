@@ -43,20 +43,50 @@ def UpLoad_File(webEle, filePath):
     time.sleep(2)
     # return check_Input.get_attribute("value")
 
-
-class TestTest1():
+#测试超级管理员-党支部管理-新建
+class TestTest10():
     def setup_method(self, method):
         self.option = webdriver.ChromeOptions()
         self.option.add_argument(r'user-data-dir=C:\Users\ZHUDIE\AppData\Local\Google\Chrome\User Data2')
-        self.driver = webdriver.Chrome("chromedriver", 0, options=self.option)
+        self.driver = webdriver.Chrome("chromedriver",0,options=self.option)
         self.driver.implicitly_wait(10)
         self.vars = {}
 
     def teardown_method(self, method):
         self.driver.quit()
 
-    def test_test1(self):
+    def test_test10(self):
         self.driver.get("http://www.cuglight.space/system/user")
         self.driver.maximize_window()
         time.sleep(3)
-
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active > .el-submenu__title").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active > .el-submenu__title").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active > span").click()
+        time.sleep(3)
+        #党支部
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active .nest-menu:nth-child(4) span").click()
+        time.sleep(3)
+        element = self.driver.find_element(By.CSS_SELECTOR, ".is-active .nest-menu:nth-child(4) span")
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element).perform()
+        time.sleep(3)
+        element = self.driver.find_element(By.CSS_SELECTOR, "body")
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element).perform()
+        time.sleep(3)
+        #新建
+        self.driver.find_element(By.CSS_SELECTOR,
+                                 ".el-form > .el-form-item > .el-form-item__content > .el-input > .el-input__inner").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR,
+                                 ".el-form > .el-form-item > .el-form-item__content > .el-input > .el-input__inner").send_keys(
+            "b")
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".el-form-item__content > .el-button--primary").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".el-button:nth-child(3) > span").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".el-button--small:nth-child(2)").click()
+        time.sleep(3)

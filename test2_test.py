@@ -43,20 +43,33 @@ def UpLoad_File(webEle, filePath):
     time.sleep(2)
     # return check_Input.get_attribute("value")
 
-
-class TestTest1():
+#测试超级管理员-党员管理-搜索
+class TestTest2():
     def setup_method(self, method):
         self.option = webdriver.ChromeOptions()
         self.option.add_argument(r'user-data-dir=C:\Users\ZHUDIE\AppData\Local\Google\Chrome\User Data2')
-        self.driver = webdriver.Chrome("chromedriver", 0, options=self.option)
+        self.driver = webdriver.Chrome("chromedriver",0,options=self.option)
         self.driver.implicitly_wait(10)
         self.vars = {}
 
     def teardown_method(self, method):
         self.driver.quit()
 
-    def test_test1(self):
+    def test_test2(self):
         self.driver.get("http://www.cuglight.space/system/user")
         self.driver.maximize_window()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active > .el-submenu__title").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active > .el-submenu__title").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".is-active > span").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".el-form-item:nth-child(1) .el-input__inner").click()
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".el-form-item:nth-child(1) .el-input__inner").send_keys(
+            "20181003772")
+        time.sleep(3)
+        self.driver.find_element(By.CSS_SELECTOR, ".el-form-item__content > .el-button--primary").click()
         time.sleep(3)
 

@@ -43,8 +43,8 @@ def UpLoad_File(webEle, filePath):
     time.sleep(2)
     # return check_Input.get_attribute("value")
 
-
-class TestTest1():
+#测试超级管理员-党员管理-修改
+class TestTest5():
     def setup_method(self, method):
         self.option = webdriver.ChromeOptions()
         self.option.add_argument(r'user-data-dir=C:\Users\ZHUDIE\AppData\Local\Google\Chrome\User Data2')
@@ -55,8 +55,9 @@ class TestTest1():
     def teardown_method(self, method):
         self.driver.quit()
 
-    def test_test1(self):
-        self.driver.get("http://www.cuglight.space/system/user")
+    def test_test5(self):
+        self.driver.get("http://www.cuglight.space/index")
         self.driver.maximize_window()
         time.sleep(3)
+
 
